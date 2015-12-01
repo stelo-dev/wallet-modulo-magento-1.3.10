@@ -1,0 +1,27 @@
+<?php
+
+  $url = $this->getUrlStelo();
+ if(Mage::getStoreConfig("payment/sso/active")){
+     
+?>
+
+<script type="text/javascript">
+
+        var html = '<a href="<?php echo $url ?>" id="steloId" style="float: right; margin-left: 25px;" lightbox="true" class="openLightbox">';
+        html += '<img width="130" alt="Logar com Stelo" src="<?php echo $this->getSkinUrl("wallet/images/logar_stelo_1.png") ?>" />';
+        html += '</a>';
+
+        html_atual  = jQuery('.firecheckout-login-wrapper').html();
+        jQuery('.firecheckout-login-wrapper').html(html_atual+html); 
+
+    
+  jQuery('#steloId').click(function(){
+    jQuery.featherlight( jQuery('<iframe width="950" height="620" src="' + jQuery(this).attr('href') + '"/>') )
+    return false;
+  })
+   
+
+</script>
+
+ <?php } ?>
+ 

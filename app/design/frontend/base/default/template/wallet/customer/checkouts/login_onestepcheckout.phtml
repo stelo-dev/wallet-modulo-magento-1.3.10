@@ -1,0 +1,25 @@
+<?php
+
+  $url = $this->getUrlStelo();
+ if(Mage::getStoreConfig("payment/sso/active")){
+     
+?>
+
+<script type="text/javascript">
+
+  var html = 'ou <a href="<?php echo $url ?>" id="light-wallet" lightbox="true" class="openLightbox">';
+      html += '<img width="140" alt="Logar com Stelo" src="<?php echo $this->getSkinUrl('wallet/images/logar_stelo_1.png') ?>" />';
+      html += '</a>';
+
+      $$('#login-call')[0].insert(html);
+
+
+  jQuery('#light-wallet').click(function(){
+    jQuery.featherlight( jQuery('<iframe width="950" height="620" src="' + jQuery(this).attr('href') + '"/>') )
+    return false;
+  })
+
+</script>
+
+ <?php } ?> 
+

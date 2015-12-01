@@ -1,0 +1,30 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+ $url = $this->getUrlStelo();
+ if(Mage::getStoreConfig("payment/sso/active")){
+     
+?>
+
+<script type="text/javascript">
+
+        var html = '<p style="float:right"><a href="<?php echo $url ?>" id="steloId"  lightbox="true" class="openLightbox">';
+        html += '<img width="130" alt="Logar com Stelo" src="<?php echo $this->getSkinUrl('wallet/images/logar_stelo_1.png') ?>" />';
+        html += '</a></p>';
+        field = $$('.onepagecheckout_loginarea')[0].insert(html);
+  
+    
+  jQuery('#steloId').click(function(){
+    jQuery.featherlight( jQuery('<iframe width="950" height="620" src="' + jQuery(this).attr('href') + '"/>') )
+    return false;
+  });
+   
+
+</script>
+
+ <?php } ?>

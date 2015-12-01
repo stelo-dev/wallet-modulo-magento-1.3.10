@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Stelo_Wallet>
+            <active>true</active>
+            <codePool>community</codePool>
+            <version>1.3.10</version>
+        </Stelo_Wallet>
+    </modules>
+</config> 

@@ -1,0 +1,22 @@
+<?php
+
+$walletUrl = Mage::getModel('wallet/api')->getWalletUrl();
+
+
+if(!empty($walletUrl)){
+?>
+
+<div id="wallet" style="display: none"></div>
+
+
+
+
+
+
+<?php 
+Mage::getSingleton('core/session')->unsWalletUrl();
+}
+
+$walletUrl = Mage::getModel('wallet/api')->getWalletUrl();
+
+?>

@@ -1,0 +1,28 @@
+<?php
+
+/* 
+ * Rodrigo Ribeiro 
+ * https://br.linkedin.com/in/rodrigoferreirasantosribeiro
+ */
+
+$baseUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);
+        
+        
+
+        
+$steloData = $this->getInstallment($this->getInfo()->getOrder());
+
+       
+?>
+<p><b>Carteira Stelo</b></p>
+<p><img src="<?php echo $baseUrl; ?>frontend/base/default/wallet/images/stelo_logo.png"></p>
+
+  <?php 
+  if($steloData["installment"] > 0 && $steloData["installment"] < 100){
+      echo "<p>O pagamento foi realizado em <b>". $steloData["installment"] . "</b> parcela(s) </p>";
+  }else if($steloData["installment"] == 0){
+      echo "<p>Não foi vinculado um pagamento à esse pedido.</p> <p>Para recuperar a compra envie este link ao cliente: </p>"
+      . "<p> <b>". $steloData["url"] . "</b></p>";
+  }
+  echo "ID pedido Stelo: ". $steloData['id'] ;  
+  ?>   

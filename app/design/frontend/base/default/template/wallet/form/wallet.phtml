@@ -1,0 +1,95 @@
+
+<?php
+$_code = $this->getMethodCode();
+$baseUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);
+$forceStelo = Mage::getSingleton('core/session')->getPaymentSteloForce();
+?>
+
+<div>
+    <?php if(empty($forceStelo)){ ?>
+    <ul style="display:none" id="payment_form_wallet" class="form-list">
+    <?php }else{?>
+         <ul style="display:block" id="payment_form_wallet" class="form-list">
+    <?php } ?>
+        <li>
+            <img style="float:left; margin:0 0 10px 20px;" src="<?php echo $baseUrl; ?>frontend/base/default/wallet/images/stelo_logo.png">
+        </li>
+        
+<?php //$isStelo =  Mage::getModel('core/cookie')->get("is_stelo");
+    //if(empty($isStelo)){
+    
+    $targetGroup = Mage::getModel('customer/group');
+    if(Mage::getSingleton('customer/session')->isLoggedIn())
+        $targetGroup->load(Mage::getSingleton('customer/session')->getCustomerGroupId());
+ ?>      
+
+    </ul>
+</div>
+
+<script>
+    
+  /*  
+function showTks() {
+    
+        option = document.getElementById("stelo_sim");
+        option.style.display = "none";
+        option2 = document.getElementById("stelo_nao");
+        option2.style.display = "none";
+       textShow = document.getElementById("textShow");
+        textShow.style.display = "none";
+        textTks = document.getElementById("textTks");
+        textTks.style.display = "block";
+    }
+
+    
+
+   
+     function hideOption() {
+        option = document.getElementById("stelo_sim");
+        option.style.display = "none";
+        option2 = document.getElementById("stelo_nao");
+        option2.style.display = "none";
+        textStelo = document.getElementById("textStelo");
+        textStelo.style.display = "block";
+        textShow = document.getElementById("textShow");
+        textShow.style.display = "none";
+        
+    }
+
+    function blockPayButton() {
+        payButton = document.getElementsByClassName("button")[4];
+        payButton.style.display = "block";
+    }
+    
+
+
+    t = document.getElementById("p_method_wallet");
+    t.onclick = function () {
+       
+        payment.switchMethod('wallet')
+    };
+   
+    
+    j = document.getElementById("stelo_sim");
+    j.onclick = function () {
+        showTks();
+        inp = document.getElementById("stelo_question");
+        document.getElementById('stelo_question').click();
+		document.getElementById('stelo_question').value = 1;
+       
+        
+        
+   };
+    
+   n = document.getElementById("stelo_nao");
+       n.onclick = function () {
+       
+       hideOption();
+      
+   };*/
+
+
+
+
+
+</script>
